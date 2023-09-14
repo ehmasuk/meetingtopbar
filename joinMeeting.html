@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>Join meeting topbar</title>
+
+
+<style>
+  .join-meeting-topbar{
+  background-color: #9A0FBF;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+.join-meeting-topbar .meeting-head{
+  font-size: 30px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.join-meeting-topbar .meeting-des{
+  font-size: 18px;
+  margin: 0;
+  margin-top: 5px;
+}
+.join-meeting-topbar .join-now-btn{
+  background-color: #FFBB3B;
+  color: #fff;
+  font-weight: 500;
+  width: 100%;
+  transition: .5s;
+  margin-top: 10px;
+}
+.join-meeting-topbar .join-now-btn:hover{
+  background-color: #fff;
+  color:#FFBB3B;
+}
+
+#meeting-timer{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.join-meeting-right-bar{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 300px;
+  max-width: 100%;
+  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+  background-color: #DFE9F7;
+  color: #000;
+  text-align: center;
+}
+.join-meeting-right-bar .meeting-head{
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.join-meeting-right-bar .meeting-des{
+  font-size: 17px;
+  margin: 0;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.join-meeting-right-bar .join-now-btn{
+  background-color: #9A0FBF;
+  color: #fff;
+  font-weight: 500;
+  width: 100%;
+  transition: .5s;
+  margin-top: 10px;
+}
+.join-meeting-right-bar .join-now-btn:hover{
+  background-color: #fff;
+  color:#9A0FBF;
+}
+.join-meeting-right-bar .fa-times{
+  color: red;
+  position: absolute;
+  right: -20px;
+  cursor: pointer;
+  top: -20px;
+  background-color: #DFE9F7;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+  <div class="join-meeting-topbar">
+    <div class="d-flex align-items-center">
+      <div class="col-md-8 text-center">
+        <p class="meeting-head">Únete a nuestra clase gratuita</p>
+        <p class="meeting-des">Aprovecha la oportunidad gratuita de enriquecer tus conocimientos.</p>
+      </div>
+      <div class="col-md-2">
+        <div>
+          Terminando en : <span id="meeting-timer"></span>
+        </div>
+        
+        <button class="btn join-now-btn">ÚNETE AHORA</button>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="join-meeting-right-bar">
+  <i class="fas fa-times"></i>
+  <img src="animation_lmhrqusk_small.gif" alt="" class="img-fluid mt-3">
+  <div class="meeting-body p-3">
+    <p class="meeting-head">Únete a nuestra clase gratuita</p>
+    <p class="meeting-des">Aprovecha la oportunidad gratuita de enriquecer tus conocimientos.</p>
+    <button class="btn join-now-btn">ÚNETE AHORA</button>
+  </div>
+</div>
+
+
+
+<script>
+  var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+  var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("meeting-timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+  
+</body>
+</html>
